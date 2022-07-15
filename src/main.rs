@@ -10,15 +10,20 @@ fn main() {
 
     let query = &args[1];
 
-    let matcher = create_matcher(query);
+    if query.contains("*") {
+        let matcher = create_matcher(query);
 
-    let branches = get_local_branches();
-    for branch in branches {
-        let result = is_match(branch.as_str(), matcher.clone());
-        if result {
-            delete_branch(&branch);
-            println!("delete branch: {}", branch)
+        let branches = get_local_branches();
+        for branch in branches {
+            let result = is_match(branch.as_str(), matcher.clone());
+            if result {
+                delete_branch(&branch);
+                println!("delete branch: {}", branch)
+            }
         }
+    } else {
+        delete_branch(query);
+        println!("delete branch: {}", query)
     }
 }
 

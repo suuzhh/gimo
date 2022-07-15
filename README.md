@@ -1,9 +1,29 @@
 # gimo
 tiny tool for git branchs batch remove
 
-# Usage
+# Install
+
+##  in project root
 
 ```bash
-gm branches/to/remove
-gm branches/*
+cargo install --path ./
+```
+
+now you can use it in terminal everywhere
+
+
+
+# Usage
+
+remove target local branch
+
+```bash
+gimo test
+
+```
+
+
+remove matched local branches
+```bash
+gimo test/*
 ```
