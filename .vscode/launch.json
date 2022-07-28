@@ -19,7 +19,7 @@
           "kind": "bin"
         }
       },
-      "args": ["chore/*"],
+      "args": ["hotfix/*"],
       "cwd": "${workspaceFolder}"
     },
     {
